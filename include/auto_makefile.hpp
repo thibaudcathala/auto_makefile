@@ -6,6 +6,7 @@
     #include <string_view>
     #include <array>
     #include <vector>
+    #include <memory>
     #include <stdexcept>
 
 namespace auto_mk {
@@ -16,6 +17,7 @@ namespace auto_mk {
 
     enum param_e {
         ROOT_RULE,
+        PATH,
         FILE_EXT,
         SUBFOLD_RULE_NAME,
         NB_PARAM
@@ -26,10 +28,23 @@ namespace auto_mk {
     extern const std::string var_fold;
     extern const std::string var_unfold;
 
+    struct param_t {
+        std::string str;
+        size_t pos;
+        auto_mk::param_e index;
+        bool in_param;
+
+        param_t() :
+            pos(0), index(static_cast<param_e>(0)), in_param(false) {}
+        param_t(auto_mk::param_e param_index) :
+            pos(0), index(param_index), in_param(false) {}
+    };
+
     struct section_t {
         int start_line;
         int end_line;
         std::string root_rule;
+        std::string path;
         std::vector<std::string> file_ext;
         std::string subfold_rule_name;
 
@@ -44,8 +59,8 @@ namespace auto_mk {
 
 void check_arg_validity(int argc);
 std::vector<std::string> get_file_content(std::string filename);
-void get_param(const std::vector<std::string> &file_content, size_t &index,
-    std::string &param, auto_mk::param_e param_index);
-void parse_makefile_param(const std::vector<std::string> &param);
+void get_param(const std::vector<std::string> &file_content,
+    size_t &index, auto_mk::param_t &param);
+void parse_makefile_param(const std::vector<auto_mk::param_t> &param);
 
 #endif /* AUTO_MAKEFILE_H */

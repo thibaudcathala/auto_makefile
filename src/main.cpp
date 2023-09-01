@@ -4,23 +4,31 @@
 #include <string>
 #include "auto_makefile.hpp"
 
-bool is_all_param_fill(const std::vector<std::string> &param)
+bool is_all_param_fill(const std::vector<auto_mk::param_t> &param)
 {
     for (size_t i = 0; i < param.size(); ++i) {
-        if (param[i].empty()) {
+        if (param[i].str.empty()) {
             return false;
         }
     }
     return true;
 }
 
+void init_param_list(std::vector<auto_mk::param_t> &param)
+{
+    for (size_t i = 0; i < auto_mk::NB_PARAM; ++i) {
+        param[i] = auto_mk::param_t {static_cast<auto_mk::param_e>(i)};
+    }
+}
+
 void launch_makefile_parsing(std::vector<std::string> &file_content)
 {
-    std::vector<std::string> param(auto_mk::NB_PARAM);
+    std::vector<auto_mk::param_t> param(auto_mk::NB_PARAM);
 
+    init_param_list(param);
     for (size_t i = 0; i < file_content.size(); ++i) {
         for (size_t j = 0; j < auto_mk::NB_PARAM; ++j) {
-            get_param(file_content, i, param[j], static_cast<auto_mk::param_e>(j));
+            get_param(file_content, i, param[j]);
         }
         if (is_all_param_fill(param)) {
             break;

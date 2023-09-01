@@ -21,6 +21,6 @@ namespace auto_mk {
     std::runtime_error variable_not_found(const std::string var)
     {
         return std::runtime_error(color::red + "\"" + var + "\""
-            + color::reset + "\" variable not found.");
+            + color::reset + " variable not found.");
     }
 }

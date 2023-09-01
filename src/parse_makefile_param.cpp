@@ -17,12 +17,12 @@ std::vector<std::string> split_string(const std::string &str, const std::string 
     return sub_strings;
 }
 
-void parse_makefile_param(const std::vector<std::string> &param)
+void parse_makefile_param(const std::vector<auto_mk::param_t> &param)
 {
     for (size_t i = 0; i < param.size(); ++i) {
-        if (param[i].empty()) {
+        if (param[i].str.empty()) {
             throw auto_mk::variable_not_found(auto_mk::param_list[i]);
         }
-        std::cout << auto_mk::param_list[i] << " str : " << param[i] << "\n";
+        std::cout << auto_mk::param_list[i] << " str : \"" << param[i].str << "\"\n";
     }
 }
