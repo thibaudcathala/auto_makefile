@@ -24,6 +24,7 @@ void init_param_list(std::vector<auto_mk::param_t> &param)
 void launch_makefile_parsing(std::vector<std::string> &file_content)
 {
     std::vector<auto_mk::param_t> param(auto_mk::NB_PARAM);
+    std::vector<auto_mk::section_t> section;
 
     init_param_list(param);
     for (size_t i = 0; i < file_content.size(); ++i) {
@@ -34,8 +35,9 @@ void launch_makefile_parsing(std::vector<std::string> &file_content)
             break;
         }
     }
-    parse_makefile_param(param);
-//    std::vector<auto_mk::section_t> &section ;
+    parse_makefile_param(param, section);
+    get_makefile_rule_pos(file_content, section);
+    generate_rule_content(file_content, section);
 }
 
 int main(int argc, char **argv)
@@ -49,8 +51,10 @@ int main(int argc, char **argv)
             std::vector<std::string> file_content = get_file_content(argv[i]);
 
             launch_makefile_parsing(file_content);
-        } catch(const std::exception &error) {
+        } catch (const std::exception &error) {
             std::cerr << error.what() << '\n';
+        } catch (...) {
+            std::cerr << "An unexpected error has occurred !\n";
         }
     }
     return 0;

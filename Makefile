@@ -11,7 +11,11 @@ SRC			=	src/main.cpp \
 				src/get_file_content.cpp \
 				src/get_param.cpp \
 				src/parse_makefile_param.cpp \
-				src/error_message.cpp
+				src/error_message.cpp \
+				src/split_string.cpp \
+				src/print_vector.cpp \
+				src/get_makefile_rule_pos.cpp \
+				src/generate_rule_content.cpp
 
 CPPFLAGS	=	-std=c++20 -Wall -Wextra -I./include/ -I../include/ -I../../include/
 
@@ -52,4 +56,8 @@ gcovr:
 	gcovr --exclude tests/
 	gcovr --exclude tests/ --branches
 
-.PHONY: all clean fclean re unit_tests tests_run gcovr
+debug: CPPFLAGS += -g3
+debug: re
+	gdb -ex "run $(arg)" -ex "bt full" -ex "detach" -ex "quit" $(NAME)
+
+.PHONY: all clean fclean re unit_tests tests_run gcovr debug
