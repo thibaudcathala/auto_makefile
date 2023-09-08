@@ -13,10 +13,8 @@
 
 ## Features
 
-- <p align="justify">Automatic Rule Generation:
-  Auto-generates Makefile rules for compiling source files, saving you time and effort in manual Makefile creation.</p>
-- <p align="justify">Customizable Rules:
-  Allows you to define root rules, file extensions, paths, and subfolder rules, making it easy to adapt the Makefile generation to your project's structure and requirements.</p>
+- Automatic Rule Generation: <p align="justify">Auto-generates Makefile rules for compiling source files, saving you time and effort in manual Makefile creation.</p>
+- <p align="justify">Customizable Rules: Allows you to define root rules, file extensions, paths, and subfolder rules, making it easy to adapt the Makefile generation to your project's structure and requirements.</p>
 - <p align="justify">Support for Multiple Root Rules: Create separate compilation rules for different parts or components of your project by specifying multiple root rules.</p>
 - <p align="justify">Effortless Subfolder Rules: Simplifies the generation of rules for subdirectories within root directories, enhancing project organization.</p>
 - <p align="justify">Custom Tab Indentation: Lets you customize the number of tabs used for indentation in the generated Makefile, ensuring consistent formatting.</p>
