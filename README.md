@@ -9,6 +9,7 @@
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
+
 `⭐ Don't forget to put a star if you like the project!`
 
 ## Features
