@@ -34,11 +34,20 @@ git clone https://github.com/your-username/auto_makefile.git
 ```bash
 cd auto_makefile
 ```
-
 3. Build the program using make:
-
 ```bash
 make
+```
+
+4. Move the program to /usr/local/bin to execute it from anywhere:
+```bash
+sudo mv auto_makefile /usr/local/bin/
+```
+
+5. (optianal) You can delete the repository:
+```bash
+cd ..
+rm -R auto_makefile/
 ```
 
 `⭐ Don't forget to put a star if you like the project!`
