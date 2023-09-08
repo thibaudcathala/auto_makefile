@@ -25,11 +25,11 @@ namespace auto_mk {
     };
 
     const std::vector<std::string> param_delimiter = {
-        " \t\n\"\'",
-        " \t\n\"\'",
-        " \t\n\"\'",
-        " \t\n\"\'+",
-        " \t\n\"\'"
+        "# \t\n\"\'",
+        "# \t\n\"\'",
+        "# \t\n\"\'",
+        "# \t\n\"\'+",
+        "# \t\n\"\'"
     };
 
     const std::string var_fold = "{FOLD}";

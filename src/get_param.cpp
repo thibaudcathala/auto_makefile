@@ -9,9 +9,9 @@ static bool get_line_content(char c, auto_mk::param_t &param)
         return true;
     }
     if (param.in_param) {
-        if (c == '#') {
-            throw auto_mk::missing_semicolon(auto_mk::param_list[param.index]);
-        }
+//        if (c == '#') {
+//            throw auto_mk::missing_semicolon(auto_mk::param_list[param.index]);
+//        }
         param.str.push_back(c);
     }
     if (c == ':') {
