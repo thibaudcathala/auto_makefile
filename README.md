@@ -4,51 +4,14 @@
 It analyzes your project directory structure and completes your Makefile rules to compile all relevant source files.
 
 ## Table of Contents
-- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
 - [Contributing](#contributing)
-- [License](#license)
 
 `⭐ Don't forget to put a star if you like the project!`
 
-## Features
-
-<details close>
-  <summary>Automatic Rule Generation</summary>
-  <p align="justify">Auto-generates Makefile rules for compiling source files, saving you time and effort in manual Makefile creation.</p>
-</details>
-<details close>
-  <summary>Customizable Rules</summary>
-  <p align="justify">Allows you to define root rules, file extensions, paths, and subfolder rules, making it easy to adapt the Makefile generation to your project's structure and requirements.</p>
-</details>
-<details close>
-  <summary>Support for Multiple Root Rules</summary>
-  <p align="justify">Create separate compilation rules for different parts or components of your project by specifying multiple root rules.</p>
-</details>
-<details close>
-  <summary>Effortless Subfolder Rules</summary>
-  <p align="justify">Simplifies the generation of rules for subdirectories within root directories, enhancing project organization.</p>
-</details>
-<details close>
-  <summary>Custom Tab Indentation</summary>
-  <p align="justify">Lets you customize the number of tabs used for indentation in the generated Makefile, ensuring consistent formatting.</p>
-</details>
-<details close>
-  <summary>Tag-Based Rule Completion</summary>
-  <p align="justify">Uses tags (#//) as markers to indicate where auto-completion should take place in the Makefile, giving you control over rule placement.</p>
-</details>
-<details close>
-  <summary>Command-Line Interface</summary>
-  <p align="justify">Provides a command-line interface for easy execution and integration into your project's build process.</p>
-</details>
-
 ## Installation
-
-### Prerequisites
-
-- C++ compiler (e.g., g++)
 
 ### Building from Source
 
@@ -122,6 +85,10 @@ ROOT_RULE_NAME  =
 
 - This variable specifies the number of tabs to use for each rule's indentation. Each entry corresponds to a root rule.
 
+## Examples
+
+
+
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
@@ -130,3 +97,5 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 3. Make your changes and commit them: `git commit -m 'Add your feature'`.
 4. Push to the branch: `git push origin feature/your-feature-name`.
 5. Create a pull request on GitHub.
+
+## 
