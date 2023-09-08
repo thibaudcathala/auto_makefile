@@ -13,14 +13,14 @@
 
 ## Features
 
-<p align="justify">- Automatic Rule Generation: Auto-generates Makefile rules for compiling source files, saving you time and effort in manual Makefile creation.
-- Customizable Rules: Allows you to define root rules, file extensions, paths, and subfolder rules, making it easy to adapt the Makefile generation to your project's structure and requirements.
-- Support for Multiple Root Rules: Create separate compilation rules for different parts or components of your project by specifying multiple root rules.
-- Effortless Subfolder Rules: Simplifies the generation of rules for subdirectories within root directories, enhancing project organization.
-- Custom Tab Indentation: Lets you customize the number of tabs used for indentation in the generated Makefile, ensuring consistent formatting.
-- Tag-Based Rule Completion: Uses tags (#//) as markers to indicate where auto-completion should take place in the Makefile, giving you control over rule placement.
-- Command-Line Interface: Provides a command-line interface for easy execution and integration into your project's build process.
-- Support for Custom Compiler Options: Allows you to specify custom compiler options and build configurations when generating Makefile rules.</p>
+- <p align="justify">Automatic Rule Generation: Auto-generates Makefile rules for compiling source files, saving you time and effort in manual Makefile creation.</p>
+- <p align="justify">Customizable Rules: Allows you to define root rules, file extensions, paths, and subfolder rules, making it easy to adapt the Makefile generation to your project's structure and requirements.</p>
+- <p align="justify">Support for Multiple Root Rules: Create separate compilation rules for different parts or components of your project by specifying multiple root rules.</p>
+- <p align="justify">Effortless Subfolder Rules: Simplifies the generation of rules for subdirectories within root directories, enhancing project organization.</p>
+- <p align="justify">Custom Tab Indentation: Lets you customize the number of tabs used for indentation in the generated Makefile, ensuring consistent formatting.</p>
+- <p align="justify">Tag-Based Rule Completion: Uses tags (#//) as markers to indicate where auto-completion should take place in the Makefile, giving you control over rule placement.</p>
+- <p align="justify">Command-Line Interface: Provides a command-line interface for easy execution and integration into your project's build process.</p>
+- <p align="justify">Support for Custom Compiler Options: Allows you to specify custom compiler options and build configurations when generating Makefile rules.</p>
 
 ## Installation
 
