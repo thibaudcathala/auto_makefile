@@ -109,7 +109,10 @@ OBJ			=	$(SRC:.cpp=.o)
 $(NAME): $(OBJ)
 	g++ -o $(NAME) $(OBJ)
 
-all: $(NAME)
+generate_rule:
+	auto_makefile Makefile
+
+all: generate_rule $(NAME)
 
 clean:
 	rm -f $(OBJ)
