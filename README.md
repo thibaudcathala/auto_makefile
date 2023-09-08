@@ -68,29 +68,29 @@ ROOT_RULE_NAME  =
 ```
 ### Tag:
 
-To delineate the section where auto_makefile needs to auto-complete the rules, use tags formatted as follows: `#//`. These tags serve as markers to indicate the boundaries of the area that require automatic rule generation.
+  To delineate the section where auto_makefile needs to auto-complete the rules, use tags formatted as follows: `#//`. These tags serve as markers to indicate the boundaries of the area that require automatic rule generation.
 
 ### Here's an explanation of each of these variables:
 
 1. **`root: [ROOT_RULE_NAME], ...;`**
 
-This variable specifies the root rule names to complete. You can list multiple root rule names, separated by commas.
+  This variable specifies the root rule names to complete. You can list multiple root rule names, separated by commas.
 
-2. **path: [PATH_TO_FOLDER], ...;**
+2. **`path: [PATH_TO_FOLDER], ...;`**
 
-Here, you provide the paths to the folders where your project's source files are located. Each path corresponds to one of the root rules defined earlier. You can specify multiple paths separated by commas.
+  Here, you provide the paths to the folders where your project's source files are located. Each path corresponds to one of the root rules defined earlier. You can specify multiple paths separated by commas.
 
-3. **file_ext: [FILE_EXT, ...], ...;**
+3. **`file_ext: [FILE_EXT, ...], ...;`**
 
-This variable specifies the file extensions of the source files you want to include in each root rule. Each entry in this list corresponds to a root rule defined earlier. You can specify multiple file extensions separated by commas for each root rule.
+  This variable specifies the file extensions of the source files you want to include in each root rule. Each entry in this list corresponds to a root rule defined earlier. You can specify multiple file extensions separated by commas for each root rule.
 
-4. **subfolder_rule_name: [SUBFOLDER_RULE_NAME], ...;**
+4. **`subfolder_rule_name: [SUBFOLDER_RULE_NAME], ...;`**
 
-For each root rule, you can specify a subfolder rule name. This name will be used to generate rules for subdirectories within each root rule's directory. Like the other variables, you can specify multiple subfolder rule names separated by commas, corresponding to the root rules.
+  For each root rule, you can specify a subfolder rule name. This name will be used to generate rules for subdirectories within each root rule's directory. Like the other variables, you can specify multiple subfolder rule names separated by commas, corresponding to the root rules.
 
 **{FOLD}** and **{SUBFOLD}** are variable that you can use in `[SUBFOLDER_RULE_NAME]` to generate different subrule name.
 
-5. **nb_tab: [NB_TAB], ...;**
+5. **`nb_tab: [NB_TAB], ...;`**
 
 This variable specifies the number of tabs to use for each rule's indentation. Each entry corresponds to a root rule.
 
