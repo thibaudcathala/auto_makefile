@@ -52,7 +52,7 @@ rm -R auto_makefile/
 ```bash
 auto_makefile [Makefile] ...
 ```
-**auto_makefile** take as argument(s) Makefile(s) where you want the rule to be auto-completed.
+**auto_makefile** take as argument Makefile where you want the rule to be auto-completed.
 
 In the Makefile, you must define specific variables and utilize tags that will serve as markers for the auto_makefile program to generate the rule content:
 ```bash
