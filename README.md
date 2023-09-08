@@ -72,7 +72,7 @@ To delineate the section where auto_makefile needs to auto-complete the rules, u
 
 ### Here's an explanation of each of these variables:
 
-1. **root: [ROOT_RULE_NAME], ...;**
+1. **`root: [ROOT_RULE_NAME], ...;`**
 
 This variable specifies the root rule names to complete. You can list multiple root rule names, separated by commas.
 
