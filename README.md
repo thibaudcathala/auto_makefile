@@ -21,7 +21,6 @@
 ### Prerequisites
 
 - C++ compiler (e.g., g++)
-- CMake (for building the program)
 
 ### Building from Source
 
@@ -44,10 +43,14 @@ make
 sudo mv auto_makefile /usr/local/bin/
 ```
 
-5. (optianal) You can delete the repository:
+5. (optional) You can delete the repository:
 ```bash
-cd ..
+cd .. ;
 rm -R auto_makefile/
+```
+## Usage
+```
+auto_makefile [Makefile] ...
 ```
 
 `⭐ Don't forget to put a star if you like the project!`
