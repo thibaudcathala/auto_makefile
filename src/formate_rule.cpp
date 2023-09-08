@@ -42,6 +42,7 @@ static void formate_rule_name(auto_mk::ffile_t &rule, const std::vector<std::str
         }
     }
     std::transform(rule.rule_name.begin(), rule.rule_name.end(), rule.rule_name.begin(), ::toupper);
+    multiple_rule_with_same_name_protection(rule.rule_name);
     rule.size_rule_name = rule.rule_name.size();
     add_tab(rule.rule_name, nb_tab);
 }
@@ -69,5 +70,7 @@ std::vector<std::string> formate_rule(auto_mk::ffile_t &root, const auto_mk::sec
         formate_rule_name(node, rule_formatring, nb_tab);
     });
     formate_rule_content(result, root, nb_tab);
+    auto_mk::used_rule_name.clear();
+    auto_mk::rule_name_i = 1;
     return result;
 }

@@ -34,4 +34,7 @@ namespace auto_mk {
 
     const std::string var_fold = "{FOLD}";
     const std::string var_subfold = "{SUBFOLD}";
+
+    std::vector<std::string> used_rule_name;
+    int rule_name_i = 1;
 }

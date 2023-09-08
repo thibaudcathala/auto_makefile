@@ -19,7 +19,8 @@ SRC			=	src/main.cpp \
 				src/formate_rule_content.cpp \
 				src/remove_empty_folder.cpp \
 				src/sort_rule_content.cpp \
-				src/insert_rule_in_makefile.cpp
+				src/insert_rule_in_makefile.cpp \
+				src/multiple_rule_with_same_name_protection.cpp
 
 CPPFLAGS	=	-std=c++20 -Wall -Wextra -I./include/ -I../include/ -I../../include/
 

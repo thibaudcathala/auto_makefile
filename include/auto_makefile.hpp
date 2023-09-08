@@ -12,6 +12,7 @@
     #include <functional>
     #include <filesystem>
     #include <list>
+    #include <map>
 
 namespace auto_mk {
 
@@ -41,6 +42,9 @@ namespace auto_mk {
 
     extern const std::string var_fold;
     extern const std::string var_subfold;
+
+    extern std::vector<std::string> used_rule_name;
+    extern int rule_name_i;
 
     struct param_t {
         std::string str;
@@ -113,5 +117,6 @@ void insert_rule_in_makefile(std::list<std::string> &new_makefile,
     const std::vector<std::string> &result,
     std::list<std::string>::iterator start_line,
     std::list<std::string>::iterator end_line);
+void multiple_rule_with_same_name_protection(std::string &rule_name);
 
 #endif /* AUTO_MAKEFILE_H */
