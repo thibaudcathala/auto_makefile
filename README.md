@@ -148,7 +148,9 @@ Here is a Makefile whith multiple rule that will be auto-completed by auto_makef
 # root: SRC, SRC_TESTS;
 # path: src/, tests/;
 # file_ext: .cpp .c++, cpp;
-# subfold_rule_name: {FOLD} + "_" + {SUBFOLD}, {FOLD} + "_" + {SUBFOLD};
+# subfold_rule_name:
+# {FOLD} + "_" + {SUBFOLD},
+# {FOLD} + "_" + {SUBFOLD};
 # nb_tab: 4, 4;
 
 #//
