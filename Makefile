@@ -15,7 +15,12 @@ SRC			=	src/main.cpp \
 				src/split_string.cpp \
 				src/print_vector.cpp \
 				src/get_makefile_rule_pos.cpp \
-				src/generate_rule_content.cpp
+				src/generate_rule_content.cpp \
+				src/formate_rule.cpp \
+				src/formate_rule_content.cpp \
+				src/remove_empty_folder.cpp \
+				src/sort_rule_content.cpp \
+				src/insert_rule_in_makefile.cpp
 
 CPPFLAGS	=	-std=c++20 -Wall -Wextra -I./include/ -I../include/ -I../../include/
 

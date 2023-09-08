@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     }
     for (int i = 1; i < argc; ++i) {
         try {
-            std::vector<std::string> file_content = get_file_content(argv[i]);
+            std::vector<std::string> file_content = get_file_content(std::string(argv[i]));
 
             launch_makefile_parsing(file_content);
         } catch (const std::exception &error) {

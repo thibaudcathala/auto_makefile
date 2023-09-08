@@ -2,6 +2,8 @@
 
 namespace auto_mk {
 
+    std::string current_filename;
+
     const std::string usage = "Usage: ./auto_makefile [Makefile] ...\n";
 
     const std::string marker = "#//";
@@ -10,23 +12,26 @@ namespace auto_mk {
         "root",
         "path",
         "file_ext",
-        "subfold_rule_name"
+        "subfold_rule_name",
+        "nb_tab"
     };
 
     const std::vector<size_t> param_arg_nb = {
         ONE,
         ONE,
         UNLIMITED,
-        UNLIMITED
+        UNLIMITED,
+        ONE
     };
 
     const std::vector<std::string> param_delimiter = {
         " \t\n\"\'",
         " \t\n\"\'",
         " \t\n\"\'",
-        " \t\n\"\'+"
+        " \t\n\"\'+",
+        " \t\n\"\'"
     };
 
     const std::string var_fold = "{FOLD}";
-    const std::string var_unfold = "{SUBFOLD}";
+    const std::string var_subfold = "{SUBFOLD}";
 }

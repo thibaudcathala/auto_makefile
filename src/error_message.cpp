@@ -53,4 +53,14 @@ namespace auto_mk {
                 " argument but expecte " + std::to_string(nb_expected) + ".");
         }
     }
+
+    std::runtime_error invalid_folder_path(const std::string &path)
+    {
+        return std::runtime_error("Invalid folder path: \"" + path + "\".");
+    }
+
+    std::runtime_error invalid_nb_of_tab(const std::string &nb_tab)
+    {
+        return std::runtime_error(nb_tab + " is not a valid number of tab.");
+    }
 }

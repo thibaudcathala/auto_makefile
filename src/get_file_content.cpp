@@ -4,7 +4,7 @@
 #include <string>
 #include "auto_makefile.hpp"
 
-std::vector<std::string> get_file_content(std::string filename)
+std::vector<std::string> get_file_content(const std::string &filename)
 {
     std::ifstream input_file(filename);
 
@@ -12,6 +12,7 @@ std::vector<std::string> get_file_content(std::string filename)
         throw auto_mk::fail_to_open_file(filename);
     }
 
+    auto_mk::current_filename = filename;
     std::vector<std::string> file_content;
     std::string line;
 
