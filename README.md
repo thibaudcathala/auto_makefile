@@ -87,7 +87,40 @@ ROOT_RULE_NAME  =
 
 ## Examples
 
+Here is a simple Makefile where the rule SRC while be auto(completed by auto_makefile:
 
+```Makefile
+# root: SRC;
+# path: src/;
+# file_ext: .cpp;
+# subfold_rule_name: {FOLD} + "_" + {SUBFOLD};
+# nb_tab: 4;
+
+#//
+SRC			=	src/main.cpp
+#//
+
+CPPFLAGS	=
+
+NAME		=
+
+OBJ			=	$(SRC:.cpp=.o)
+
+$(NAME): $(OBJ)
+	g++ -o $(NAME) $(OBJ)
+
+all: $(NAME)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+```
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
