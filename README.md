@@ -87,7 +87,14 @@ ROOT_RULE_NAME  =
 
 ## Examples
 
-Here is a simple Makefile where the rule SRC while be auto(completed by auto_makefile:
+Here is a simple Makefile where the rule SRC will be auto(completed by auto_makefile:
+
+```bash
+.
+├── Makefile
+└── src
+    └── main.cpp
+```
 
 ```Makefile
 # root: SRC;
@@ -97,7 +104,7 @@ Here is a simple Makefile where the rule SRC while be auto(completed by auto_mak
 # nb_tab: 4;
 
 #//
-SRC			=	src/main.cpp
+SRC			=
 #//
 
 CPPFLAGS	=
