@@ -87,7 +87,7 @@ ROOT_RULE_NAME  =
 
 ## Examples
 
-Here is a simple Makefile where the rule SRC will be auto(completed by auto_makefile:
+Here is a simple Makefile where the rule SRC will be auto-completed by auto_makefile:
 
 ```bash
 .
@@ -95,7 +95,6 @@ Here is a simple Makefile where the rule SRC will be auto(completed by auto_make
 └── src
     └── main.cpp
 ```
-
 ```Makefile
 # root: SRC;
 # path: src/;
@@ -104,14 +103,72 @@ Here is a simple Makefile where the rule SRC will be auto(completed by auto_make
 # nb_tab: 4;
 
 #//
-SRC			=
+SRC         =    main.cpp
 #//
 
-CPPFLAGS	=
+CPPFLAGS    =
 
-NAME		=
+NAME        =
 
-OBJ			=	$(SRC:.cpp=.o)
+OBJ         =    $(SRC:.cpp=.o)
+
+$(NAME): $(OBJ)
+	g++ -o $(NAME) $(OBJ)
+
+generate_rule:
+	auto_makefile Makefile
+
+all: generate_rule $(NAME)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+```
+
+Here is a Makefile whith multiple rule that will be auto-completed by auto_makefile:
+
+```bash
+.
+├── Makefile
+├── src
+│   └── main.cpp
+└── tests
+    ├── suite_1
+    │   └── test_1.cpp
+    └── suite_2
+        └── test_2.cpp
+```
+```Makefile
+# root: SRC, SRC_TESTS;
+# path: src/, tests/;
+# file_ext: .cpp .c++, cpp;
+# subfold_rule_name: {FOLD} + "_" + {SUBFOLD}, {FOLD} + "_" + {SUBFOLD};
+# nb_tab: 4, 4;
+
+#//
+SRC             =    main.cpp
+#//
+
+CPPFLAGS        =
+
+NAME            =
+
+#//
+TESTS_SUITE_1   =    tests/suite_1/test_1.cpp
+
+TESTS_SUITE_2   =    tests/suite_2/test_2.cpp
+
+SRC_TESTS       =    $(TESTS_SUITE_1) \
+                     $(TESTS_SUITE_2)
+#//
+
+OBJ             =    $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
 	g++ -o $(NAME) $(OBJ)
