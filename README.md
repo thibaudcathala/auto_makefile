@@ -1,6 +1,6 @@
 # auto_makefile
 
-**auto_makefile** is a C++ program that automates the generation of Makefiles for your C++ projects. It analyzes your project directory structure and creates a Makefile with rules to compile all relevant source files.
+**auto_makefile** is a C++ program that automates the generation of Makefiles Rules for your projects. It analyzes your project directory structure and completes your Makefile rules to compile all relevant source files.
 
 ## Table of Contents
 - [Features](#features)
@@ -49,8 +49,20 @@ cd .. ;
 rm -R auto_makefile/
 ```
 ## Usage
-```
+```bash
 auto_makefile [Makefile] ...
 ```
+**auto_makefile** take as argument Makefile where you want the rule to be auto-completed.
+
+In the Makefile you will have to add line 
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature-name`.
+3. Make your changes and commit them: `git commit -m 'Add your feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Create a pull request on GitHub.
 
 `⭐ Don't forget to put a star if you like the project!`
