@@ -41,9 +41,4 @@ void insert_rule_in_makefile(std::list<std::string> &new_makefile,
     remove_existing_rule(new_makefile, start_line, end_line);
     insert_new_rule(new_makefile, result, insert_pos);
     insert_new_rule_in_makefile(auto_mk::current_filename, new_makefile);
-    std::cout << "--- MAKEFILE ---\n";
-    for (auto &i : new_makefile) {
-        std::cout << i << "\n";
-    }
-    std::cout << "----------------\n";
 }

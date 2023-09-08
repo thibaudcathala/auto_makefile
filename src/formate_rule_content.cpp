@@ -43,11 +43,6 @@ static void for_each_rule(const auto_mk::ffile_t &node, std::vector<std::string>
 void formate_rule_content(std::vector<std::string> &result,
     const auto_mk::ffile_t &root, int nb_tab)
 {
-    std::cout << "_______________Result_______________\n";
     for_each_rule(root, result, nb_tab);
     proccess_rule(result, root, nb_tab);
-    for (auto &line : result) {
-        std::cout << line << "\n";
-    }
-    std::cout << "____________________________________\n";
 }

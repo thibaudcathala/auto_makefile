@@ -99,7 +99,6 @@ void get_param(const std::vector<std::string> &file_content,
 void parse_makefile_param(const std::vector<auto_mk::param_t> &param,
     std::vector<auto_mk::section_t> &section);
 std::vector<std::string> split_string(const std::string &str, const std::string &delimiter);
-void print_vector(const std::vector<std::string> &vector);
 void get_makefile_rule_pos(const std::vector<std::string> &file_content,
     std::list<std::string> &file_content_list, std::vector<auto_mk::section_t> &section);
 void generate_rule_content(std::list<std::string> &file_content,

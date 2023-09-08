@@ -62,16 +62,12 @@ std::vector<std::string> formate_rule(auto_mk::ffile_t &root, const auto_mk::sec
     std::vector<std::string> result;
     int nb_tab = get_nb_of_tab(section.arg[auto_mk::NB_TAB][0]);
 
-    std::cout << "---------------------------------------------\n";
     root.rule_name = section.arg[auto_mk::ROOT_RULE][0];
     add_tab(root.rule_name, nb_tab);
-    std::cout << "Root rule: " << root.rule_name << "\n";
     for_each_folder(root, section.arg[auto_mk::SUBFOLD_RULE_NAME], nb_tab,
         [](auto_mk::ffile_t &node, const std::vector<std::string> &rule_formatring, int nb_tab) {
         formate_rule_name(node, rule_formatring, nb_tab);
-        std::cout << "New rule: " << node.rule_name << "\n";
     });
-    std::cout << "---------------------------------------------\n";
     formate_rule_content(result, root, nb_tab);
     return result;
 }

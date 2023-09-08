@@ -6,7 +6,6 @@ static void check_param_validity(const std::vector<auto_mk::param_t> &param)
         if (param[i].str.empty()) {
             throw auto_mk::variable_not_found(auto_mk::param_list[i]);
         }
-        std::cout << auto_mk::param_list[i] << " str : \"" << param[i].str << "\"\n";
     }
 }
 
@@ -66,9 +65,4 @@ void parse_makefile_param(
     check_param_validity(param);
     fill_section_arg(param, section);
     clean_section_arg(param, section);
-    for (size_t i = 0; i < section.size(); ++i) {
-        for (size_t j = 0; j < param.size(); ++j) {
-            print_vector(section[i].arg[j]);
-        }
-    }
 }

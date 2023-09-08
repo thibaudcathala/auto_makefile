@@ -13,7 +13,6 @@ SRC			=	src/main.cpp \
 				src/parse_makefile_param.cpp \
 				src/error_message.cpp \
 				src/split_string.cpp \
-				src/print_vector.cpp \
 				src/get_makefile_rule_pos.cpp \
 				src/generate_rule_content.cpp \
 				src/formate_rule.cpp \
