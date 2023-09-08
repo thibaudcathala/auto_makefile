@@ -1,6 +1,7 @@
 # auto_makefile
 
-**auto_makefile** is a C++ program that automates the generation of Makefiles Rules for your projects. It analyzes your project directory structure and completes your Makefile rules to compile all relevant source files.
+**auto_makefile** is a C++ program that automates the generation of Makefiles Rules for your projects.
+It analyzes your project directory structure and completes your Makefile rules to compile all relevant source files.
 
 ## Table of Contents
 - [Features](#features)
