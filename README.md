@@ -9,7 +9,7 @@ It analyzes your project directory structure and completes your Makefile rules t
 - [Examples](#examples)
 - [Contributing](#contributing)
 
-`⭐ Don't forget to put a star if you like the project!`
+`⭐ Don't forget to put a star if you like the projectt !`
 
 ## Installation
 
