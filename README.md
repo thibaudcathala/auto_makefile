@@ -13,7 +13,7 @@
 
 ## Features
 
-<details open>
+<details close>
   <summary>Automatic Rule Generation</summary>
   <p align="justify">Auto-generates Makefile rules for compiling source files, saving you time and effort in manual Makefile creation.</p>
 </details>
