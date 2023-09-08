@@ -16,35 +16,59 @@ static size_t search_root_rule(const std::string &rule_name,
     throw auto_mk::root_rule_not_found(rule_name);
 }
 
-static void search_start_end(size_t rule_pos,
-    const std::vector<std::string> &file_content,
-    auto_mk::section_t &section)
+static std::list<std::string>::iterator index_to_iterator(std::list<std::string> &list, int index)
 {
+    std::list<std::string>::iterator iterator = list.begin();
+
+    std::advance(iterator, index);
+    return iterator;
+}
+
+static int get_start_pos(size_t rule_pos,
+    const std::vector<std::string> &file_content,
+    const std::string &rule_name)
+{
+    int start_line = -1;
+
     for (int i = rule_pos; i >= 0; --i) {
         if (file_content[i].compare(0, auto_mk::marker.size(), auto_mk::marker) == 0) {
-            section.start_line = i;
+            start_line = i;
             break;
         }
     }
-    if (section.start_line == -1) {
-        throw auto_mk::marker_not_found("top", section.arg[auto_mk::ROOT_RULE][0]);
+    if (start_line == -1) {
+        throw auto_mk::marker_not_found("top", rule_name);
     }
+    return start_line;
+}
+
+static int get_end_pos(size_t rule_pos,
+    const std::vector<std::string> &file_content,
+    const std::string &rule_name)
+{
+    int end_line = -1;
+
     for (size_t i = rule_pos; i < file_content.size(); ++i) {
         if (file_content[i].compare(0, auto_mk::marker.size(), auto_mk::marker) == 0) {
-            section.end_line = i;
+            end_line = i;
             break;
         }
     }
-    if (section.end_line == -1) {
-        throw auto_mk::marker_not_found("bottom", section.arg[auto_mk::ROOT_RULE][0]);
+    if (end_line == -1) {
+        throw auto_mk::marker_not_found("bottom", rule_name);
     }
+    return end_line;
 }
 
 void get_makefile_rule_pos(const std::vector<std::string> &file_content,
+    std::list<std::string> &file_content_list,
     std::vector<auto_mk::section_t> &section)
 {
     for (size_t i = 0; i < section.size(); ++i) {
-        search_start_end(search_root_rule(
-            section[i].arg[auto_mk::ROOT_RULE][0], file_content), file_content, section[i]);
+        size_t pos_root = search_root_rule(section[i].arg[auto_mk::ROOT_RULE][0], file_content);
+        section[i].start_line = index_to_iterator(file_content_list,
+            get_start_pos(pos_root, file_content, section[i].arg[auto_mk::ROOT_RULE][0]));
+        section[i].end_line = index_to_iterator(file_content_list,
+            get_end_pos(pos_root, file_content, section[i].arg[auto_mk::ROOT_RULE][0]));
     }
 }

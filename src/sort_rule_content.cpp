@@ -9,7 +9,7 @@ void sort_rule_content(auto_mk::ffile_t &node)
         } else if (!node_a.is_file && node_b.is_file) {
             return false;
         } else {
-            return node_a.creation_date < node_b.creation_date;
+            return node_a.last_write_time < node_b.last_write_time;
         }
     });
 }

@@ -55,13 +55,13 @@ namespace auto_mk {
     };
 
     struct section_t {
-        int start_line;
-        int end_line;
+        std::list<std::string>::iterator start_line;
+        std::list<std::string>::iterator end_line;
         std::vector<std::vector<std::string>> arg;
         std::vector<std::string> result;
 
-        section_t() : start_line(-1), end_line(-1) {}
-        section_t(size_t nb_arg) : start_line(-1), end_line(-1), arg(nb_arg) {}
+        section_t() : start_line(nullptr), end_line(nullptr) {}
+        section_t(size_t nb_arg) : start_line(nullptr), end_line(nullptr), arg(nb_arg) {}
     };
 
     struct ffile_t {
@@ -73,10 +73,10 @@ namespace auto_mk {
         std::string sub_folder;
         std::string rule_name;
         size_t size_rule_name;
-        std::time_t creation_date;
+        std::filesystem::file_time_type last_write_time;
 
         ffile_t(std::filesystem::path _path, ffile_t *_parent) :
-            path(_path), parent(_parent), is_file(false), creation_date(0) {}
+            path(_path), parent(_parent), is_file(false) {}
     };
 
     std::runtime_error fail_to_open_file(const std::string &filename);
@@ -101,8 +101,8 @@ void parse_makefile_param(const std::vector<auto_mk::param_t> &param,
 std::vector<std::string> split_string(const std::string &str, const std::string &delimiter);
 void print_vector(const std::vector<std::string> &vector);
 void get_makefile_rule_pos(const std::vector<std::string> &file_content,
-    std::vector<auto_mk::section_t> &section);
-void generate_rule_content(std::vector<std::string> &file_content,
+    std::list<std::string> &file_content_list, std::vector<auto_mk::section_t> &section);
+void generate_rule_content(std::list<std::string> &file_content,
     std::vector<auto_mk::section_t> &section);
 std::vector<std::string> formate_rule(auto_mk::ffile_t &root,
     const auto_mk::section_t &section);
@@ -110,7 +110,9 @@ void remove_empty_folder(auto_mk::ffile_t &root);
 void formate_rule_content(std::vector<std::string> &result,
     const auto_mk::ffile_t &root, int nb_tab);
 void sort_rule_content(auto_mk::ffile_t &node);
-void insert_rule_in_makefile(const std::vector<std::string> &file_content,
-    const std::vector<std::string> &result, int start_line, int end_line);
+void insert_rule_in_makefile(std::list<std::string> &new_makefile,
+    const std::vector<std::string> &result,
+    std::list<std::string>::iterator start_line,
+    std::list<std::string>::iterator end_line);
 
 #endif /* AUTO_MAKEFILE_H */

@@ -36,8 +36,9 @@ void launch_makefile_parsing(std::vector<std::string> &file_content)
         }
     }
     parse_makefile_param(param, section);
-    get_makefile_rule_pos(file_content, section);
-    generate_rule_content(file_content, section);
+    std::list<std::string> file_content_list(file_content.begin(), file_content.end());
+    get_makefile_rule_pos(file_content, file_content_list, section);
+    generate_rule_content(file_content_list, section);
 }
 
 int main(int argc, char **argv)
