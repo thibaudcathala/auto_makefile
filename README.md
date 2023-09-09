@@ -9,7 +9,7 @@ It analyzes your project directory structure and completes your Makefile rules t
 - [Examples](#examples)
 - [Contributing](#contributing)
 
-`⭐ Don't forget to put a star if you like the projectt !`
+`⭐ Don't forget to put a star if you like the project !`
 
 ## Installation
 
@@ -50,7 +50,7 @@ In the Makefile, you must define specific variables and utilize tags that will s
 # root: [ROOT_RULE_NAME], ...;
 # path: [PATH_TO_FOLDER], ...;
 # file_ext: [FILE_EXT, ...], ...;
-# subfolder_rule_name: [SUBFOLDER_RULE_NAME], ...;
+# subfold_rule_name: [SUBFOLDER_RULE_NAME], ...;
 # nb_tab: [NB_TAB], ...;
 
 #//
@@ -75,7 +75,7 @@ ROOT_RULE_NAME  =
 
 - This variable specifies the file extensions of the source files you want to include in each root rule. Each entry in this list corresponds to a root rule defined earlier. You can specify multiple file extensions separated by commas for each root rule.
 
-4. **`subfolder_rule_name: [SUBFOLDER_RULE_NAME], ...;`**
+4. **`subfold_rule_name: [SUBFOLDER_RULE_NAME], ...;`**
 
 - For each root rule, you can specify a subfolder rule name. This name will be used to generate rules for subdirectories within each root rule's directory. Like the other variables, you can specify multiple subfolder rule names separated by commas, corresponding to the root rules.
 
